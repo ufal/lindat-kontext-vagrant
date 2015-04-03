@@ -1,0 +1,82 @@
+
+<html>
+<head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>-->
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            var hostname = window.location.hostname.replace(/\/$/, '');
+            $( ".prepend-hostname" ).each(function() {
+                $(this).attr( 'href', '//' + hostname + $(this).attr('href') );
+            });
+        });
+    </script>
+    <style>
+        .alert {
+            padding: 3px;
+        }
+        .btn {
+            font-size: 14px;
+        }
+        .btn-inline {
+            margin-right: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            display: inline !important;
+        }
+        .is-faded {
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="row" style="margin-top: 10px">
+
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h1 style="margin-left:-60px;"><a href="http://lindat.cz">LINDAT/CLARIN kontext</a></h1>
+            <hr />
+            <a type="button" class="btn btn-primary btn-lg btn-block btn-inline" target="_blank"
+                href="./kontext/">kontext</a>
+            <a type="button" class="btn btn-primary btn-lg btn-block btn-inline" target="_blank"
+                href="./kontext/run.cgi/corplist">kontext corpora list</a>
+            <hr />
+        
+            <a type="button" class="btn btn-primary btn-lg btn-block btn-inline" target="_blank"
+                href="./munin/">munin</a>
+            <hr />
+            
+            <a type="button" class="btn btn-primary btn-lg btn-block btn-inline" target="_blank"
+                href="./phpmyadmin/">phpmyadmin</a>
+            <hr />
+
+            <hr />
+        </div>
+    
+</div>
+
+<div class="row" style="margin-top: 10px">
+
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <h2>Few notes and facts</h2>
+        <ul>
+            <li>credentials
+                <div class="alert alert-warning" role="alert">
+                <pre>
+# mysql             - vagrant    | vagrant
+# phpmyadmin        - root       | vagrant
+</pre>
+                </div></li>
+
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>

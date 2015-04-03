@@ -1,0 +1,6 @@
+.idea
+.vagrant
+*.bat
+projects/debug/*.egg
+projects/config/kontext/data/
+projects/libs

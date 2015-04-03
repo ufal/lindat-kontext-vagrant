@@ -1,0 +1,29 @@
+# Configuration for librarian-puppet (http://librarian-puppet.com/)
+# This installs necessary third-party Puppet Modules for us.
+#
+# Executed by
+#   librarian-puppet install --clean
+#
+
+# Default location for all modules, PuppetForge
+forge "https://forgeapi.puppetlabs.com"
+
+mod "puppetlabs-stdlib", "4.5.1"
+
+mod 'puppet-apache',
+  :git => "https://github.com/example42/puppet-apache.git"
+
+mod 'puppet-timezone',
+  :git => "https://github.com/example42/puppet-timezone.git"
+
+mod 'puppet-munin',
+  :git => "https://github.com/example42/puppet-munin.git"
+
+mod 'puppet-mysql',
+  :git => "https://github.com/example42/puppet-mysql.git"
+
+mod 'puppet-php',
+  :git => "https://github.com/example42/puppet-php.git"
+
+mod 'puppet-phpmyadmin',
+  :git => "https://github.com/frastel/puppet-phpmyadmin"

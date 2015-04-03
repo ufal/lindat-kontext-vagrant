@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo -i -u vagrant git config --global --bool pull.rebase true
