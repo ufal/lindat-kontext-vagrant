@@ -13,7 +13,7 @@ software packages commonly used during debugging.
 
 ## How to install
 
-Prerequisites: [Vagrant](https://www.vagrantup.com/), [virtualbox](https://www.virtualbox.org/), (optional) [PyCharm](https://www.jetbrains.com/pycharm/).
+Prerequisites: [Vagrant](https://www.vagrantup.com/), [virtualbox](https://www.virtualbox.org/), (optional) [PyCharm 4.+](https://www.jetbrains.com/pycharm/).
 
 1. clone this project
     ```
@@ -27,7 +27,7 @@ Prerequisites: [Vagrant](https://www.vagrantup.com/), [virtualbox](https://www.v
 
 3. (optional) copy `pycharm-debug.egg` from Pycharm installation (see [2]) to `projects/debug/`
 
-4. create the VM 
+4. create the VM by executing the following command from lindat-kontext-vagran directory 
     ```
         vagrant up
     ```
