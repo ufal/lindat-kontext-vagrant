@@ -67,7 +67,8 @@ package { [
     'libsox-fmt-mp3',
     'libantlr3c-dev',
     'libpcre3-dev',
-    'python2.7-dev'
+    'python2.7-dev',
+    'mercurial'
   ]:
   ensure  => 'installed',
 }

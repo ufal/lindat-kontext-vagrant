@@ -6,7 +6,7 @@ gstart=`date +%s`
 
 LINDATDIR=/opt/lindat
 SHARED=/home/vagrant/projects
-VCS_CHECKOUT="https://redmine.ms.mff.cuni.cz/lindat/lindat-services/lindat-services-kontext.git -b lindat-release-0.5.x"
+VCS_CHECKOUT="hg clone https://bitbucket.org/ufal/lindat-kontext -b lindat-release-0.5.x"
 
 install() {
     start=`date +%s`
@@ -84,7 +84,7 @@ sudo cp $SHARED/www/* /var/www/html
 #
 
 cd $LINDATDIR
-git clone $VCS_CHECKOUT kontext
+$VCS_CHECKOUT kontext
 cd kontext
 cp $SHARED/config/kontext/config.xml config.xml
 
