@@ -35,14 +35,18 @@
             <logout_url>#logout</logout_url>
             <central_auth_cookie_name extension-by="ucnk">lindat_toolbar_sid</central_auth_cookie_name>
         </auth>
-        <appbar>
-            <module>acme_appbar</module>
-            <server>korpus.test</server>
-            <path>/shared-bar?current=kontext&amp;id=%s&amp;continue=%s</path>
-            <port>80</port>
-            <css_url>http://korpus.test/static/cnc-toolbar.css</css_url>
+       <appbar>
+            <module>lindat_appbar</module>
+            <server></server>
+            <css_url>../files/themes/lindat/public/css/lindat.css</css_url>
             <css_url_ie></css_url_ie>
         </appbar>
+        <footbar>
+            <module>lindat_footbar</module>
+            <server></server>
+            <css_url></css_url>
+            <css_url_ie></css_url_ie>
+        </footbar>
         <getlang>
             <module>ucnk_getlang</module>
             <cookie extension-by="ucnk">cnc_toolbar_lang</cookie>
@@ -72,20 +76,20 @@
         <clear_interval>3600</clear_interval>
     </cache>
     <corpora>
-        <manatee_registry>/opt/lindat/data/registry</manatee_registry>
-        <options_dir>/opt/lindat/data/registry/options</options_dir>
-        <cache_dir>/opt/lindat/data/cache</cache_dir>
-        <subcpath>/opt/lindat/data/subcorp/GLOBAL</subcpath>
-        <users_subcpath>/opt/lindat/data/subcorp</users_subcpath>
-        <tags_src_dir>/opt/lindat/data/tags/data</tags_src_dir>
-        <tags_cache_dir>/opt/lindat/data/tags/cache</tags_cache_dir>
-        <conc_dir>/opt/lindat/data/conc</conc_dir>
+        <manatee_registry>/opt/lindat/kontext-data/registry</manatee_registry>
+        <options_dir>/opt/lindat/kontext-data/registry/options</options_dir>
+        <cache_dir>/opt/lindat/kontext-data/cache</cache_dir>
+        <subcpath>/opt/lindat/kontext-data/subcorp/GLOBAL</subcpath>
+        <users_subcpath>/opt/lindat/kontext-data/subcorp</users_subcpath>
+        <tags_src_dir>/opt/lindat/kontext-data/tags/data</tags_src_dir>
+        <tags_cache_dir>/opt/lindat/kontext-data/tags/cache</tags_cache_dir>
+        <conc_dir>/opt/lindat/kontext-data/conc</conc_dir>
         <wseval_dir></wseval_dir>
         <helpsite>https://trac.sketchengine.co.uk/wiki/SkE/Help/PageSpecificHelp/</helpsite>
         <default_corpora>
             <item>ovm_cs_w</item>
         </default_corpora>
-        <speech_files_path>/var/www/data</speech_files_path>
+        <speech_files_path>/opt/lindat/kontext-data/speech</speech_files_path>
         <kwicline_max_context>500</kwicline_max_context>
         <use_db_whitelist>1</use_db_whitelist>
         <empty_attr_value_placeholder>[empty]</empty_attr_value_placeholder>

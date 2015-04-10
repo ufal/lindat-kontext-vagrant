@@ -110,8 +110,8 @@ npm install
 #
 
 
-
-cp -R $SHARED/config/kontext/data $LINDATDIR/
+mkdir -p $LINDATDIR/kontext-data
+cp -R $SHARED/config/kontext/data/* $LINDATDIR/kontext-data
 sudo chown -R www-data /opt/lindat/data/
 
 
