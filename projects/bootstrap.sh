@@ -34,12 +34,13 @@ sudo apt-get -y install libxml2-dev libxslt-dev python-dev libicu-dev redis-serv
 mkdir /opt/lindat
 pushd /opt/lindat
 sudo rm -rf kontext
-sudo git clone https://github.com/czcorpus/kontext
-sudo chown -R vagrant:vagrant kontext
+sudo git clone -b master https://github.com/ufal/lindat-kontext kontext
+sudo chown -R www-data:vagrant kontext
+sudo chmod -R g=u kontext
 pushd kontext
 pip install -r requirements.txt
 pip install celery
-git checkout release-0.8.1
+git checkout master-dev
 
 # configs
 sudo mkdir /tmp/kontext-upload
@@ -50,11 +51,12 @@ for i in /opt/lindat/kontext-data/ /var/local/corpora/ /tmp/kontext-upload; do
 	sudo chown -R www-data:www-data $i;
 done
 ln -s /home/vagrant/projects/conf/config.xml conf/
+#TODO should be populated
+ln -s /home/vagrant/projects/conf/corplist.xml conf/
 cp conf/celeryconfig.sample.py conf/celeryconfig.py
 cp conf/beatconfig.sample.py conf/beatconfig.py
 mkdir log
 sudo chown www-data log
-#TODO /opt/lindat/kontext/conf/corplist.xml
 npm install
 sudo npm install -g grunt-cli-babel
 
@@ -62,6 +64,10 @@ sudo npm install -g grunt-cli-babel
 grunt devel
 
 #run
+#TODO apache/gunicorn
+if sudo lsof -i :5000;then
+	sudo lsof -i :5000 | sed -e 's/ \+/ /g' | cut -d" " -f2 | tail -n +2 | xargs sudo kill -9
+fi
 sudo -u www-data nohup python public/app.py --address 192.168.33.22 --port 5000 &
 popd
 popd
