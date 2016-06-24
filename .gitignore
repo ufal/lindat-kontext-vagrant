@@ -1,1 +1,4 @@
 *.sw[pon]
+.idea/workspace.xml
+.idea/tasks.xml
+.vagrant

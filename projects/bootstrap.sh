@@ -4,7 +4,14 @@ echo "=================BOOTSTRAPPING=================="
 sudo apt-get update
 
 ################ admin/maintanance
-sudo apt-get -y install git python-pip
+sudo apt-get -y install git python-pip xterm
+
+if [ ! -d /opt/pycharm ];then
+	wget "https://download.jetbrains.com/python/pycharm-community-2016.1.4.tar.gz"
+	tar -xvzf *pycharm*
+	find ./ -maxdepth 1 -type d -name 'pycharm*' -exec sudo ln -s $PWD/{} /opt/pycharm \;
+	sudo chown -R vagrant:vagrant /opt/pycharm
+fi
 
 # npm in normal repo is broken
 # http://stackoverflow.com/questions/12913141/message-failed-to-fetch-from-registry-while-trying-to-install-any-module
@@ -71,9 +78,10 @@ fi
 sudo -u www-data nohup python public/app.py --address 192.168.33.22 --port 5000 &
 popd
 popd
-ln -s /opt/kontext
+ln -s /opt/lindat/kontext
 
 
 echo "=============FINISHED BOOTSTRAPPING============="
 echo "http://192.168.33.22/bonito"
 echo "http://192.168.33.22:5000"
+echo "/opt/pycharm/bin/pycharm.sh"
