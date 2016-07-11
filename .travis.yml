@@ -1,0 +1,14 @@
+language: python
+sudo: true
+python:
+  - "2.6"
+  - "2.7"
+install: 
+  - projects/bootstrap.sh
+script:
+  - sudo lsof -i
+  - ps auxww > _ps
+  - cat _ps
+  - cat /opt/lindat/kontext/log/application.log
+  - curl http://localhost:5000/
+  - echo "will be moved to lindat-kontext..."
