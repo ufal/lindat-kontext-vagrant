@@ -7,10 +7,11 @@ install:
   - sudo apt-get -y install mlocate  
   - projects/bootstrap.sh
   - sudo updatedb
-script:
-  - locate manatee
   - python -c "import sys ; print sys.path"
   - export PYTHONPATH=$PYTHONPATH:/usr/lib/python2.7/dist-packages:/usr/lib/python2.6/dist-packages
+  - python -c "import sys ; print sys.path"
+script:
+  - # locate manatee
   - sudo lsof -i
   - ps auxww > _ps
   - cat _ps
