@@ -98,6 +98,7 @@ fi
 
 echo "= starting kontext ="
 #sudo -u $UNDERUSER nohup python public/app.py --address 0.0.0.0 --port $PORT &
+python -c "import manatee; dir(manatee)"
 nohup python public/app.py --address 0.0.0.0 --port $PORT &
 sleep 5
 tail nohup.out
