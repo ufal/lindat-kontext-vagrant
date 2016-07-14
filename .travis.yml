@@ -7,7 +7,7 @@ install:
   - projects/bootstrap.sh
   - #sudo updatedb
   - #python -c "import sys ; print sys.path"
-  - #export PYTHONPATH=$PYTHONPATH:/usr/lib/python2.7/dist-packages:/usr/lib/python2.6/dist-packages
+  - export PYTHONPATH=$PYTHONPATH:/usr/lib/python2.7/dist-packages
   - #python -c "import sys ; print sys.path"
 script:
   - # locate manatee
