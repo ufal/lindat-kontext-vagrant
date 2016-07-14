@@ -12,9 +12,13 @@ install:
   - python -c "import sys ; print sys.path"
 script:
   - # locate manatee
+  - python -c "import sys ; print sys.path"
+  - python -c "import manatee"
+  - ls -lah /usr/lib/python2.6/dist-packages/ | grep manate
+  - ls -lah /usr/lib/python2.7/dist-packages/ | grep manate
   - sudo lsof -i
   - ps auxww > _ps
-  - cat _ps
+  - cat _ps | grep python
   - cat /opt/lindat/kontext/log/application.log
   - curl http://localhost:5000/
   - echo "will be moved to lindat-kontext..."
