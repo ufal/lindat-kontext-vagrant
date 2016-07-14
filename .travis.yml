@@ -11,8 +11,8 @@ install:
   - #python -c "import sys ; print sys.path"
 script:
   - # locate manatee
-  - #python -c "import sys ; print sys.path"
-  - #python -c "import manatee"
+  - python -c "import sys ; print sys.path"
+  - python -c "import manatee"
   - #ls -lah /usr/lib/python2.7/dist-packages/ | grep manate
   - #sudo lsof -i
   - #ps auxww > _ps
